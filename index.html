@@ -62,27 +62,24 @@ body {
   font-size: 24px;
   color: #555;
 }
+  .close {
+  display: none;
+}
 
 .gift {
   font-size: 58px;
   margin-bottom: 8px;
   color: #16803c;
-  animation: pulse 1.9s infinite;
+  animation: gentlePulse 2s ease-in-out infinite;
 }
-@keyframes pulse {
-  0% {
+
+@keyframes gentlePulse {
+  0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 2, 2, 0.7);
   }
 
   50% {
-    transform: scale(1.06);
-    box-shadow: 0 0 0 12px rgba(100, 40, 216, 0);
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 2, 2, 0);
+    transform: scale(1.08);
   }
 }
 
@@ -241,6 +238,46 @@ h1 {
     transform: translateX(-100%);
   }
 }
+  .countdown-title {
+  margin-top: 8px;
+  color: #555;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin: 12px 0 20px;
+}
+
+.time-box {
+  min-width: 62px;
+  padding: 9px 6px;
+  background: #f80202;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.time-box span {
+  display: block;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.time-box small {
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.colon {
+  font-size: 23px;
+  font-weight: bold;
+  color: #f80202;
+}
   </style>
 </head>
 <body>
@@ -267,8 +304,58 @@ h1 {
         You have been selected for a
         <strong>10GB Social Bundle</strong>.
       </p>
+<div class="countdown-title"> chitani machawi nthawi isadathe:</div>
 
+<div class="countdown">
+  <div class="time-box">
+    <span id="hours">02</span>
+    <small>HOURS</small>
+  </div>
+
+  <div class="colon">:</div>
+
+  <div class="time-box">
+    <span id="minutes">00</span>
+    <small>MIN</small>
+  </div>
+
+  <div class="colon">:</div>
+
+  <div class="time-box">
+    <span id="seconds">00</span>
+    <small>SEC</small>
+  </div>
+</div>
+      <script>
+let totalSeconds = 2 * 60 * 60;
+
+function updateCountdown() {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  document.getElementById("hours").textContent =
+    String(hours).padStart(2, "0");
+
+  document.getElementById("minutes").textContent =
+    String(minutes).padStart(2, "0");
+
+  document.getElementById("seconds").textContent =
+    String(seconds).padStart(2, "0");
+
+  if (totalSeconds > 0) {
+    totalSeconds--;
+  } else {
+    clearInterval(timer);
+  }
+}
+
+updateCountdown();
+
+const timer = setInterval(updateCountdown, 1000);
+</script>
       <div class="bundle">
+        
         <div class="gb">10GB</div>
         <div>
           <strong>Facebook + TikTok</strong>
@@ -288,7 +375,7 @@ h1 {
       <p id="message"></p>
 
       <div class="footer">
-        Airtel internet bundle is valid for 7 days. Terms and conditions apply.
+        Airtel internet bundle is valid for 2 hrs. Terms and conditions apply.
       </div>
 
     </div>
